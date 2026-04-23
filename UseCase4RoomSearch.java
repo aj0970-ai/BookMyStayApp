@@ -1,17 +1,5 @@
 /**
- * ===================================================================
- * MAIN CLASS - UseCase4RoomSearch
- * ===================================================================
- *
- * Use Case 4: Room Search & Availability Check
- *
- * Description:
- * This class demonstrates how guests can search
- * for available rooms without modifying system state.
- *
- * Read-only access ensures inventory consistency
- * and prevents unintended side effects.
- *
+ 
  * The system enforces read-only access
  * by design and usage discipline.
  *

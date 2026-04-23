@@ -1,17 +1,5 @@
 /**
- * ===================================================================
- * CLASS - RoomSearchService
- * ===================================================================
- *
- * Use Case 4: Room Search & Availability Check
- *
- * Description:
- * This class provides search functionality
- * for guests to view available rooms.
- *
- * It reads room availability from inventory
- * and room details from Room objects.
- *
+ 
  * @param inventory centralized room inventory
  * @param singleRoom single room definition
  * @param doubleRoom double room definition
