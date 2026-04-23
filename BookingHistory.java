@@ -3,10 +3,7 @@ import java.util.*;
 /**
  * ===========================================================
  * CLASS - BookingHistory
- * ===========================================================
- * Use Case 8: Booking History & Reporting
- *
- * Maintains record of confirmed reservations
+ * =====ns
  * in insertion order.
  *
  * @version 8.0

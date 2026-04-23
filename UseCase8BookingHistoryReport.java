@@ -1,9 +1,6 @@
 /**
  * ===========================================================
- * MAIN CLASS - UseCase8BookingHistoryReport
- * ===========================================================
- * Demonstrates booking history and reporting
- *
+ 
  * @version 8.0
  */
 

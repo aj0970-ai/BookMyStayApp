@@ -1,8 +1,5 @@
 /**
- * ===========================================================
- * CLASS - BookingReportService
- * ===========================================================
- * Use Case 8: Booking History & Reporting
+ ting
  *
  * Generates reports from booking history.
  *
