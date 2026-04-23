@@ -47,3 +47,4 @@ public class Reservation {
         return roomType;
     }
 }
+    

@@ -1,0 +1,34 @@
+/**
+ * ===========================================================
+ * MAIN CLASS - UseCase8BookingHistoryReport
+ * ===========================================================
+ * Demonstrates booking history and reporting
+ *
+ * @version 8.0
+ */
+
+public class UseCase8BookingHistoryReport {
+
+    public static void main(String[] args) {
+
+        // Create booking history
+        BookingHistory history = new BookingHistory();
+
+        // Create sample reservations
+        Reservation r1 = new Reservation("Abhi", "Single");
+        Reservation r2 = new Reservation("Subha", "Double");
+        Reservation r3 = new Reservation("Vannathi", "Suite");
+
+        // Add to history
+        history.addReservation(r1);
+        history.addReservation(r2);
+        history.addReservation(r3);
+
+        // Generate report
+        BookingReportService reportService = new BookingReportService();
+
+        System.out.println("Booking History and Reporting");
+
+        reportService.generateReport(history);
+    }
+}
