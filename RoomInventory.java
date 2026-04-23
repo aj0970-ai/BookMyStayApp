@@ -9,84 +9,77 @@ import java.util.Map;
  * Use Case 3: Centralized Room Inventory Management
  *
  * Description:
- * This class acts as the single source of truth
- * for room availability in the hotel.
+ * Single source of truth for room availability.
  *
- * Room pricing and characteristics are obtained
- * from Room objects, not duplicated here.
+ * Integrated with:
+ * Use Case 9 - Validation support (availability checks)
  *
- * This avoids multiple sources of truth and
- * keeps responsibilities clearly separated.
- *
- * @author Developer
- * @version 3.0
+ * @version 3.1
  */
 public class RoomInventory {
 
     private Map<String, Integer> roomAvailability;
 
     /**
-     * Constructor initializes the inventory
-     * with all details (in this case, currently empty).
+     * Constructor initializes inventory with default values
      */
     public RoomInventory() {
         this.roomAvailability = new HashMap<>();
+
+        // Default room availability
+        roomAvailability.put("Single", 2);
+        roomAvailability.put("Double", 2);
+        roomAvailability.put("Suite", 1);
     }
 
     /**
-     * Calculates availability Map.
+     * Returns a copy of full availability map
      *
-     * Lists stored availability below
-     * the map of other queried inventories.
-     */
-    private void putAvailabilityInventory() {
-        // This method initializes inventory with values
-    }
-
-    /**
-     * Returns the current availability map.
-     *
-     * Returns the complete inventory state
-     * for better queried inventory.
-     *
-     * @return The current availability map
+     * @return availability map
      */
     public Map<String, Integer> readAvailabilityInventory() {
         return new HashMap<>(roomAvailability);
     }
 
     /**
-     * Updates availability for a specific room type.
+     * Updates availability for a room type
      *
-     * @param roomType The room type to update
-     * @param count    The available room count
+     * @param roomType room type
+     * @param count    available count
      */
     public void putAvailabilityForRoomType(String roomType, Integer count) {
         roomAvailability.put(roomType, count);
     }
 
     /**
-     * Returns the current availability for a specific room type.
+     * Returns available count for a room type
      *
-     * Returns end of room type to available count
-     * mapping.
-     *
-     * @param roomType The room type to query
-     * @return The available room count
+     * @param roomType room type
+     * @return available rooms
      */
     public Integer getAvailabilityCount(String roomType) {
         return roomAvailability.getOrDefault(roomType, 0);
     }
 
     /**
-     * Decrements availability by one for a specific room type
-     * only when stock is available.
+     * Checks if room is available
      *
-     * @param roomType The room type to decrement
-     * @return true if availability was decremented, false otherwise
+     * @param roomType room type
+     * @return true if available
+     */
+    public boolean hasAvailableRoom(String roomType) {
+        return getAvailabilityCount(roomType) > 0;
+    }
+
+    /**
+     * Decrements availability if possible
+     *
+     * @param roomType room type
+     * @return true if successful
      */
     public boolean decrementAvailabilityForRoomType(String roomType) {
         int available = getAvailabilityCount(roomType);
+
         if (available <= 0) {
             return false;
         }

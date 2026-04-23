@@ -9,50 +9,69 @@ import java.util.Queue;
  * Use Case 5: Booking Request (FIFO)
  *
  * Description:
- * This class manages booking requests
- * using a queue to ensure fair allocation.
+ * Manages booking requests using FIFO queue.
  *
- * Requests are processed strictly
- * in the order they are received.
+ * Integrated with:
+ * Use Case 9 - Safe handling & validation support
  *
- * @version 5.0
+ * @version 5.1
  */
 public class BookingRequestQueue {
 
-    /** Queue that stores booking requests. */
+    /** Queue storing booking requests */
     private Queue<Reservation> requestQueue;
 
-    /** Initializes an empty booking queue. */
+    /** Initializes empty queue */
     public BookingRequestQueue() {
         requestQueue = new LinkedList<>();
     }
 
     /**
-     * Add a booking request to the queue.
+     * Adds a booking request to queue
      *
      * @param reservation booking request
      */
     public void addRequest(Reservation reservation) {
+        if (reservation == null) {
+            System.out.println("Cannot add null booking request.");
+            return;
+        }
         requestQueue.offer(reservation);
     }
 
     /**
-     * Retrieves and removes the next
-     * booking request from the queue.
+     * Retrieves and removes next request
      *
-     * @return next reservation request
+     * @return next reservation OR null
      */
     public Reservation getNextRequest() {
         return requestQueue.poll();
     }
 
     /**
-     * Checks whether there are
-     * pending booking requests.
+     * Returns next request WITHOUT removing it
      *
-     * @return true if queue is not empty
+     * @return next reservation OR null
+     */
+    public Reservation peekNextRequest() {
+        return requestQueue.peek();
+    }
+
+    /**
+     * Checks if queue has pending requests
+     *
+     * @return true if not empty
      */
     public boolean hasPendingRequests() {
         return !requestQueue.isEmpty();
+    }
+
+    /**
+     * Returns number of pending requests
+     *
+     * @return queue size
+     */
+    public int getQueueSize() {
+        return requestQueue.size();
     }
 }
