@@ -77,4 +77,21 @@ public class RoomInventory {
     public Integer getAvailabilityCount(String roomType) {
         return roomAvailability.getOrDefault(roomType, 0);
     }
+
+    /**
+     * Decrements availability by one for a specific room type
+     * only when stock is available.
+     *
+     * @param roomType The room type to decrement
+     * @return true if availability was decremented, false otherwise
+     */
+    public boolean decrementAvailabilityForRoomType(String roomType) {
+        int available = getAvailabilityCount(roomType);
+        if (available <= 0) {
+            return false;
+        }
+
+        roomAvailability.put(roomType, available - 1);
+        return true;
+    }
 }
