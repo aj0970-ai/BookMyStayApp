@@ -2,13 +2,7 @@ import java.util.*;
 
 /**
  * ===========================================================
- * CLASS - AddOnServiceManager
- * ===========================================================
- * Use Case 7: Add-On Service Selection
- *
- * Description:
- * Manages optional services associated with reservations.
- *
+
  * Supports attaching multiple services to a reservation.
  *
  * @version 7.0

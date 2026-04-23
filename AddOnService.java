@@ -1,13 +1,7 @@
 /**
  * ===========================================================
  * CLASS - Service
- * ===========================================================
- * Use Case 7: Add-On Service Selection
- *
- * Description:
- * This class represents an optional service
- * that can be added to a confirmed reservation.
- *
+ * ==============
  * Examples:
  * - Breakfast
  * - Spa

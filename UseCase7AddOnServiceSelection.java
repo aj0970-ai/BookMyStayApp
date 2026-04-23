@@ -1,10 +1,6 @@
 /**
  * ===========================================================
- * MAIN CLASS - UseCase7AddOnServiceSelection
- * ===========================================================
- * Use Case 7: Add-On Service Selection
- *
- * Demonstrates attaching optional services to a reservation.
+ * MAIN Cervation.
  *
  * @version 7.0
  */
